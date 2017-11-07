@@ -1,0 +1,33 @@
+form a {
+  margin-left: 5px;
+}
+.pull-right{
+   float: right !important;
+}
+.pull-down{
+  margin-top: 10px
+}
+
+.pull-left{
+  margin-left:50px;
+
+}
+.changefont{
+  color:Red;
+}
+.float-left{
+  margin-left:100px;
+
+}
+.btn-trans{
+  background: transparent;
+  border:none;
+}
+
+html body {
+  background-color: #89CADC;
+}
+.bgcolo {
+  background-color: #89CADC !important;
+  border: none !important;
+}
