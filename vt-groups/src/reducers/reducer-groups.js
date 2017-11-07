@@ -1,25 +1,32 @@
-import {FETCH_GROUPS} from '../actions';
+import { FETCH_GROUPS } from '../actions';
 import _ from 'lodash';
-import {CREATE_GROUP} from '../actions'
-import {FETCH_GROUP, DELETE_GROUP} from '../actions'
-import {loadState} from '../localStorage'
+import { CREATE_GROUP } from '../actions'
+import { FETCH_GROUP, DELETE_GROUP } from '../actions'
+import { loadState } from '../localStorage'
 
-
-
-
-export default function(state={}, action){
-  switch(action.type){
+//reducer function to return the state based on the payload of the action.
+export default function(state = {}, action) {
+  // if the actiontype is fetchGroup then return whole state and required group with id as the payload
+  switch (action.type) {
     case FETCH_GROUP:
-    return { ...state, [action.payload.data.id]: action.payload.data };
+      return {
+        ...state,
+        [action.payload.data.id]: action.payload.data
+      };
+    //if the action is fetchGroups, then return whole state with mapping of each group with key as id
     case FETCH_GROUPS:
-    console.log(action.payload.data)
-    return _.mapKeys(action.payload.data, 'id');
+      return _.mapKeys(action.payload.data, 'id');
+    //if the action is deleteGroup, then omitting the current group from the state.
     case DELETE_GROUP:
-    return _.omit(state, action.payload);
+      return _.omit(state, action.payload);
+    //if the action is creategroup then adding the current payload to whole state.
     case CREATE_GROUP:
-  //  const arr = _.mapKeys([action.payload], 'id');
-  // const arr2 = arr[action.payload.id]
-   return {...state , [action.payload.id]:action.payload};
-    default: return state;
+      return {
+        ...state,
+        [action.payload.id]: action.payload
+      };
+    // if nothing matches the action type then return the original state.
+    default:
+      return state;
   }
 }
