@@ -1,6 +1,4 @@
-ReduxSimpleStarter
-
-Interested in learning Redux?
+Group-Management-App
 
 Getting Started
 
@@ -10,13 +8,14 @@ Familiar with Git?
 
 Checkout this repo, install dependencies, then start the gulp process with the following:
 
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
+> git clone https://github.com/arunn2567/Groups-management-app
+> cd Groups-management-app/vt-groups
 > npm install
 > npm start
+
 Not Familiar with Git?
 
-Click here then download the .zip file. Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+Click to download the .zip file. Extract the contents of the zip file, then open your terminal, change to the project directory, and:
 
 > npm install
 > npm start
